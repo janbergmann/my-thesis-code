@@ -24,9 +24,9 @@ library(texreg)
 library(MASS)
 library(car)
 
-data <- read_excel('/Users/janbergmann/Library/Mobile Documents/com~apple~CloudDocs/Dokumente_iCloud/uni/Uni_letztes/[Masterarbeit]/fiskaldaten/IMF (neu)/vergleich_alle.xlsx') %>%
+data <- read_excel('countrylist.xlsx') %>%
   mutate(post = factor(post, levels = c(0, 1, 2)),
-         year = factor(year))  # year muss Faktor sein
+         year = factor(year))
 
 pdata <- pdata.frame(data, index = c("country", "year"))  # Paneldaten
 
